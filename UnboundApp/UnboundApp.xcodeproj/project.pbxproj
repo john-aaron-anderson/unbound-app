@@ -857,7 +857,9 @@
 				458AD543623D03B2E21995ED /* README.md */,
 				438CEA45569AE30A178EA3A2 /* Pods */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		1DB2F84B167ABE87008AC0F7 /* Products */ = {
 			isa = PBXGroup;
