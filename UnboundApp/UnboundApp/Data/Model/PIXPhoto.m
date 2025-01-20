@@ -239,18 +239,18 @@ const CGFloat kThumbnailSize = 370.0f;
             
             [image setCacheMode:NSImageCacheAlways];
             
-            // use this to 'warm up' the image and get it loaded in the bg and ready for display
-            NSWindow * window = [[[PIXAppDelegate sharedAppDelegate] mainWindowController] window];
-            NSRect windowFrame = [window frame];
-            [image CGImageForProposedRect:&windowFrame context:nil hints:[window deviceDescription]];
-            
-            // TODO: specify color space, nsimagehintctm in hints directory
-            // also try nsdevicedescription directly as hints dir
-            
-            // take cgimage and draw to bitmap should work with 1x1 bitmap
-            
-            
-            [weakSelf performSelectorOnMainThread:@selector(mainThreadComputeFullsizePreviewFinished:) withObject:image waitUntilDone:YES];
+            dispatch_sync(dispatch_get_main_queue(), ^() {
+                // use this to 'warm up' the image and get it loaded in the bg and ready for display
+                NSWindow * window = [[[PIXAppDelegate sharedAppDelegate] mainWindowController] window];
+                NSRect windowFrame = [window frame];
+                [image CGImageForProposedRect:&windowFrame context:nil hints:[window deviceDescription]];
+                
+                // TODO: specify color space, nsimagehintctm in hints directory
+                // also try nsdevicedescription directly as hints dir
+                
+                // take cgimage and draw to bitmap should work with 1x1 bitmap
+                [self mainThreadComputeFullsizePreviewFinished:image];
+            });
             
             CFRelease(imageSource);
         }

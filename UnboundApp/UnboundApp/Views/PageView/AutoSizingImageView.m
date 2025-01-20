@@ -32,15 +32,15 @@
     [self setEditable:YES];
 }
 
-- (void)setFrameSize:(NSSize)newSize {
-
-    NSScrollView *scrollView = [self enclosingScrollView];
-    if (scrollView) {
-        [super setFrameSize:scrollView.frame.size];
-    } else {
-        [super setFrameSize:newSize];
-    }
-}
+//- (void)setFrameSize:(NSSize)newSize {
+//
+//    NSScrollView *scrollView = [self enclosingScrollView];
+//    if (scrollView) {
+//        [super setFrameSize:scrollView.frame.size];
+//    } else {
+//        [super setFrameSize:newSize];
+//    }
+//}
 
 -(void)rightMouseDown:(NSEvent *)theEvent {
     DLog(@"rightMouseDown:%@", theEvent);
