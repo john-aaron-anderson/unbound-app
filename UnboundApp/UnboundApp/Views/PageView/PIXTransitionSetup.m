@@ -47,6 +47,7 @@
  */
 
 #import "PIXPageView.h"
+#import <CoreImage/CIFilter.h>
 
 
 @implementation PIXPageView (PIXTransitionSetup)

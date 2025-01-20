@@ -37,7 +37,6 @@
 		2F670611257C7E5500487B31 /* PIXApplicationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F67060F257C7E5500487B31 /* PIXApplicationExtensions.m */; };
 		2F670612257C7E5500487B31 /* PIXApplicationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F67060F257C7E5500487B31 /* PIXApplicationExtensions.m */; };
 		2F6706332582B7E100487B31 /* PIXAboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458AD849574325C47243A590 /* PIXAboutWindowController.xib */; };
-		2F6706392583112F00487B31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6706372583111600487B31 /* StoreKit.framework */; };
 		2F7781DB2585AB5700C24525 /* LibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7781DA2585AB5700C24525 /* LibraryPicker.swift */; };
 		2F7781DC2585AE5700C24525 /* LibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7781DA2585AB5700C24525 /* LibraryPicker.swift */; };
 		2F7781DE2585AF5900C24525 /* LibraryDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7781DD2585AF5900C24525 /* LibraryDirectory.swift */; };
@@ -480,7 +479,6 @@
 		2F64E3E925A10DFB00931A45 /* PathControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathControl.swift; sourceTree = "<group>"; };
 		2F67060F257C7E5500487B31 /* PIXApplicationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIXApplicationExtensions.m; path = Kevlar/PIXApplicationExtensions.m; sourceTree = "<group>"; };
 		2F670610257C7E5500487B31 /* PIXApplicationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIXApplicationExtensions.h; path = Kevlar/PIXApplicationExtensions.h; sourceTree = "<group>"; };
-		2F6706372583111600487B31 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7781DA2585AB5700C24525 /* LibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPicker.swift; sourceTree = "<group>"; };
 		2F7781DD2585AF5900C24525 /* LibraryDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDirectory.swift; sourceTree = "<group>"; };
 		2F7781DF2585B18000C24525 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -762,7 +760,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7781E02585B18000C24525 /* SwiftUI.framework in Frameworks */,
-				2F6706392583112F00487B31 /* StoreKit.framework in Frameworks */,
 				8C9565051846802800B5627B /* SystemConfiguration.framework in Frameworks */,
 				8C94E027183DA6D800827888 /* WebKit.framework in Frameworks */,
 				8C94E026183DA6D300827888 /* CoreLocation.framework in Frameworks */,
@@ -876,7 +873,6 @@
 			isa = PBXGroup;
 			children = (
 				2F7781DF2585B18000C24525 /* SwiftUI.framework */,
-				2F6706372583111600487B31 /* StoreKit.framework */,
 				8C9565041846802800B5627B /* SystemConfiguration.framework */,
 				8C9FA5BF183ACB98000AEBC9 /* WebKit.framework */,
 				8C9FA5BD183ACB90000AEBC9 /* CoreLocation.framework */,
@@ -1477,8 +1473,9 @@
 				ORGANIZATIONNAME = "Pixite Apps LLC";
 				TargetAttributes = {
 					1DB2F849167ABE87008AC0F7 = {
-						DevelopmentTeam = GCQM9R5G83;
+						DevelopmentTeam = XV4F52KWLY;
 						LastSwiftMigration = 1130;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -2263,11 +2260,13 @@
 				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CODE_SIGN_ENTITLEMENTS = Unbound.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = GCQM9R5G83;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XV4F52KWLY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2294,6 +2293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixite.UnboundForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -2317,11 +2317,13 @@
 				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CODE_SIGN_ENTITLEMENTS = Unbound.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = GCQM9R5G83;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = XV4F52KWLY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2348,6 +2350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixite.UnboundForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
